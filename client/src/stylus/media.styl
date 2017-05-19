@@ -1,0 +1,46 @@
+@media screen and (max-width: 600px)
+  .page-list
+    .list
+      width: 100%
+      padding: 0 20px
+
+    .list-item
+      width: 42%
+      margin: 0 4% 8% 4%
+  .page-detail
+    padding-top: 0
+
+    .article-wrap
+      width 100%
+    .padding
+      padding-left: 15px
+      padding-right: @padding-left
+    .back-arrow
+      top: 15px
+      left: @top
+@media screen and (max-width: 414px)
+  .page-list
+    .list
+      padding: 0
+
+    .list-item
+      width: 100%
+      margin: 0
+      margin-bottom: 60px
+      box-shadow: none
+      position: relative
+      padding-bottom: 10px
+
+      &:hover
+        transform: translate3d(0,0,0)
+        box-shadow: none
+
+      &:after
+        content: ''
+        position: absolute
+        background: #aaa
+        width 30px
+        height 2px
+        bottom: 0
+        left: 50%
+        margin-left: -15px

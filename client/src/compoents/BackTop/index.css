@@ -1,0 +1,20 @@
+.to-top {
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  cursor: pointer;
+  right: 10px;
+  bottom: 30px;
+  font-size: 40px;
+  line-height: 1em;
+  color: #ccc;
+  transition: all 0.3s ease;
+  transform: rotate(90deg);
+  user-select: none;
+  /*用户不能选中*/
+}
+
+.to-top:hover {
+  color: #111;
+  transform: rotate(90deg) translate3d(-5px,0, 0);
+}

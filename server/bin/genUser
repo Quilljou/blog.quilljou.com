@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+// 输入账号
+// 输入密码
+// 确认？
+
+// 使用yargs模块,如果把此脚本加入npm scripts，会取不到命令行参数，所以需要一行一行去配置，类似npm init
+
+
+const models = require('../models/');
+const inquirer = require('inquirer');
+const argv = require('yargs')
+              .argv;
+
+
+
+inquirer.prompt([{
+  type: 'input',
+  name: 'username',
+  message: 'username for the blog:'
+  // default: 'root',
+},{
+  type: 'input',
+  name: 'password',
+  message: 'password for the blog:'
+  // default: 'root',
+}]).then( (answers) => {
+  genUser(answers)
+})
+.catch(err => {
+  console.log(err)
+})
+
+
+// const user = {
+//   username: argv.u,
+//   password: argv.p
+// };
+
+
+
+
+
+
+function genUser({username,password}) {
+  models.User
+  .build({
+    username,
+    password
+  })
+  .save()
+  .then( () => {
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+}
+
+
+// console.log(process.env);
